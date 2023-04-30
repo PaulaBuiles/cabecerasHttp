@@ -1,8 +1,8 @@
 package com.example.cabecerashttppractica2.servlet;
 
 import com.example.cabecerashttppractica2.model.Producto;
-import com.example.cabecerashttppractica2.service.ProductoService;
-import com.example.cabecerashttppractica2.service.impl.ProductoServiceImpl;
+import com.example.cabecerashttppractica2.service.ProductService;
+import com.example.cabecerashttppractica2.service.impl.ProductServiceImpl;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -16,7 +16,7 @@ public class ProductoXlsServlet extends HttpServlet {
     @Override
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ProductoServiceImpl service = new ProductoService();
+        ProductService service = new ProductServiceImpl();
         List<Producto> productos = service.listar();
         resp.setContentType("text/html;charset=UTF-8");
         String servletPath = req.getServletPath();
